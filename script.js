@@ -3,14 +3,28 @@ function locomotive(){
     gsap.registerPlugin(ScrollTrigger);
 
     const locoScroll = new LocomotiveScroll({
-    el: document.querySelector(".main"),
-    smooth: true
+        el: document.querySelector(".main"),
+        smooth: true,
+        inertia: .5,
+        getDirection: true,
+        mobile: {
+            breakpoint: 0,  
+            smooth: true,
+            inertia: .9,
+            getDirection: true,
+        },
+        tablet: {
+            breakpoint: 0,  
+            smooth: true,
+            inertia: 0.9,
+            getDirection: true,
+        },
     });
     locoScroll.on("scroll", ScrollTrigger.update);
 
     ScrollTrigger.scrollerProxy(".main", {
     scrollTop(value) {
-        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        return arguments.length ? locoScroll.scrollTo(value, 0, true) : locoScroll.scroll.instance.scroll.y;
     }, 
     getBoundingClientRect() {
         return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
@@ -19,23 +33,26 @@ function locomotive(){
     });
 
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
     ScrollTrigger.refresh();
 
 }
 
 locomotive();
 
-Shery.mouseFollower({
-    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-    skew: true,
-    duration: 1,
-});
+let width = window.innerWidth;
 
-Shery.makeMagnet(".hero>.right>.text>a, nav>.right>.hamburger", {
-    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-    duration: 1,
-});
+if(width>550){
+    Shery.mouseFollower({
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        skew: true,
+        duration: 1,
+    });
+    
+    Shery.makeMagnet(".hero>.right>.text>a", {
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        duration: 1,
+    });
+}
 
 function textAnime(){
     Shery.textAnimate(".hero>.left>.bottom>h4", {
@@ -204,7 +221,7 @@ gsap.from(".section2>.container>.text",{
 gsap.from(".section2>.container>.left>video",{
     scrollTrigger: {
         scroller: ".main",
-        trigger: ".section2>.container>.left>video",
+        trigger: ".section2>.container>.left",
         start: "top 60%",
         end: "bottom bottom",
         // markers: true,
@@ -220,7 +237,7 @@ gsap.from(".section2>.container>.left>video",{
 gsap.from(".section2>.container>.right h3",{
     scrollTrigger: {
         scroller: ".main",
-        trigger: ".section2>.container>.left>video",
+        trigger: ".section2>.container>.left",
         start: "top 60%",
         end: "bottom bottom",
         // markers: true,
@@ -322,6 +339,7 @@ gsap.from(".section3>.right>h1",{
 
     opacity: 0,
     y: 50,
+    delay: .4,
     duration: 1.5,
     ease: "elastic.out(1, 0.8)"
 })

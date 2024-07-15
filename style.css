@@ -841,6 +841,7 @@ nav{
         justify-content: space-between;
         align-items: start;
         flex-direction: column;
+        overflow: hidden;
         
         
         video{
@@ -857,7 +858,7 @@ nav{
         button{
             padding: 1.5vw 1.5vw;
             border-radius: 50%;
-            border: 3px solid #c1c1c1;
+            border: 2px solid #d4d4d4;
             font-family: HelvB;
             font-size: 1.4vw;
             color: #101010cd;
