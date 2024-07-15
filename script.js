@@ -5,7 +5,7 @@ function locomotive(){
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector(".main"),
         smooth: true,
-        inertia: .5,
+        inertia: .6,
         getDirection: true,
         mobile: {
             breakpoint: 0,  
@@ -381,7 +381,7 @@ gsap.from(".section4>.box>video",{
     scrollTrigger: {
         scroller: ".main",
         trigger: ".section4>.box>video",
-        start: "top 85%",
+        start: "top 90%",
         end: "bottom bottom",
         // markers: true,
     },
@@ -406,6 +406,492 @@ gsap.from(".section4>.box>h2",{
     x: 50, 
     duration: 2,
     stagger: .2,
+    ease: "elastic.out(1, 0.7)"
+})
+
+function counter(){
+    $(".counter").counterUp({
+        delay: 4,
+        time: 1000,
+    });
+}
+
+gsap.from(".section5>.box",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section5>.box",
+        start: "top 80%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    y: 50, 
+    duration: 2,
+    stagger: .2,
+    ease: "elastic.out(1, 0.7)",
+    onStart: ()=> counter(),
+})
+
+function section7TextAnime(){
+    Shery.textAnimate(".section7>.left>p", {
+        style: 1,
+        y: 1,
+        delay: 0.1,
+        duration: .2,
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        multiplier: 0.5,
+      });
+}
+
+gsap.from(".section7>.left>p",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section7>.left>p",
+        start: "top 75%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    onStart: ()=> section7TextAnime(),
+    // y: 50,
+    duration: 1.5,
+    ease: "elastic.out(1, 0.8)"
+})
+
+gsap.from(".section7>.left>.down>h1 span",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section7>.left>.down>h1 span",
+        start: "top 70%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    rotateY: 100, 
+    duration: 2,
+    stagger: .15,
+    ease: "elastic.out(1, 0.7)"
+})
+
+gsap.from(".section7>.left>.down>h2 span",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section7>.left>.down>h1 span",
+        start: "top 70%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    rotateY: 100, 
+    duration: 2,
+    stagger: .15,
+    ease: "elastic.out(1, 0.7)"
+})
+
+gsap.from(".section7>.left>.down>h2 img",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section7>.left>.down>h1 span",
+        start: "top 70%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    rotate: 75, 
+    duration: 2,
+    ease: "elastic.out(1, 0.7)"
+})
+
+gsap.from(".section7>.right p",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section7>.right>p",
+        start: "top 70%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    y: 75,
+    duration: 2,
+    stagger: .15,
+    ease: "elastic.out(1, 0.7)"
+})
+
+gsap.from(".section7>.right button",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section7>.right>button",
+        start: "top 85%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    y: 15,
+    scale: .5,
+    duration: 2,
+    ease: "elastic.out(1, 0.7)"
+})
+
+
+
+function canvasVideo(){
+
+    const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+
+    window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+    });
+
+    function files(index) {
+    var data = `
+        ./imgs/info1/i\ \(1\).jpg
+        ./imgs/info1/i\ \(2\).jpg
+        ./imgs/info1/i\ \(3\).jpg
+        ./imgs/info1/i\ \(4\).jpg
+        ./imgs/info1/i\ \(5\).jpg
+        ./imgs/info1/i\ \(6\).jpg
+        ./imgs/info1/i\ \(7\).jpg
+        ./imgs/info1/i\ \(8\).jpg
+        ./imgs/info1/i\ \(9\).jpg
+        ./imgs/info1/i\ \(10\).jpg
+        ./imgs/info1/i\ \(11\).jpg
+        ./imgs/info1/i\ \(12\).jpg
+        ./imgs/info1/i\ \(13\).jpg
+        ./imgs/info1/i\ \(14\).jpg
+        ./imgs/info1/i\ \(15\).jpg
+        ./imgs/info1/i\ \(16\).jpg
+        ./imgs/info1/i\ \(17\).jpg
+        ./imgs/info1/i\ \(18\).jpg
+        ./imgs/info1/i\ \(19\).jpg
+        ./imgs/info1/i\ \(20\).jpg
+        ./imgs/info1/i\ \(21\).jpg
+        ./imgs/info1/i\ \(22\).jpg
+        ./imgs/info1/i\ \(23\).jpg
+        ./imgs/info1/i\ \(24\).jpg
+        ./imgs/info1/i\ \(25\).jpg
+        ./imgs/info1/i\ \(26\).jpg
+        ./imgs/info1/i\ \(27\).jpg
+        ./imgs/info1/i\ \(28\).jpg
+        ./imgs/info1/i\ \(29\).jpg
+        ./imgs/info1/i\ \(30\).jpg
+        ./imgs/info1/i\ \(31\).jpg
+        ./imgs/info1/i\ \(32\).jpg
+        ./imgs/info1/i\ \(33\).jpg
+        ./imgs/info1/i\ \(34\).jpg
+        ./imgs/info1/i\ \(35\).jpg
+        ./imgs/info1/i\ \(36\).jpg
+        ./imgs/info1/i\ \(37\).jpg
+        ./imgs/info1/i\ \(38\).jpg
+        ./imgs/info1/i\ \(39\).jpg
+        ./imgs/info1/i\ \(40\).jpg
+        ./imgs/info1/i\ \(41\).jpg
+        ./imgs/info1/i\ \(42\).jpg
+        ./imgs/info1/i\ \(43\).jpg
+        ./imgs/info1/i\ \(44\).jpg
+        ./imgs/info1/i\ \(45\).jpg
+        ./imgs/info1/i\ \(46\).jpg
+        ./imgs/info1/i\ \(47\).jpg
+        ./imgs/info1/i\ \(48\).jpg
+        ./imgs/info1/i\ \(49\).jpg
+        ./imgs/info1/i\ \(50\).jpg
+        ./imgs/info1/i\ \(51\).jpg
+        ./imgs/info1/i\ \(52\).jpg
+        ./imgs/info1/i\ \(53\).jpg
+        ./imgs/info1/i\ \(54\).jpg
+        ./imgs/info1/i\ \(55\).jpg
+        ./imgs/info1/i\ \(56\).jpg
+        ./imgs/info1/i\ \(57\).jpg
+        ./imgs/info1/i\ \(58\).jpg
+        ./imgs/info1/i\ \(59\).jpg
+        ./imgs/info1/i\ \(60\).jpg
+        ./imgs/info1/i\ \(61\).jpg
+        ./imgs/info1/i\ \(62\).jpg
+        ./imgs/info1/i\ \(63\).jpg
+        ./imgs/info1/i\ \(64\).jpg
+        ./imgs/info1/i\ \(65\).jpg
+        ./imgs/info1/i\ \(66\).jpg
+        ./imgs/info1/i\ \(67\).jpg
+        ./imgs/info1/i\ \(68\).jpg
+        ./imgs/info1/i\ \(69\).jpg
+        ./imgs/info1/i\ \(70\).jpg
+        ./imgs/info1/i\ \(71\).jpg
+        ./imgs/info1/i\ \(72\).jpg
+        ./imgs/info1/i\ \(73\).jpg
+        ./imgs/info1/i\ \(74\).jpg
+        ./imgs/info1/i\ \(75\).jpg
+        ./imgs/info1/i\ \(76\).jpg
+        ./imgs/info1/i\ \(77\).jpg
+        ./imgs/info1/i\ \(78\).jpg
+        ./imgs/info1/i\ \(79\).jpg
+        ./imgs/info1/i\ \(80\).jpg
+        ./imgs/info1/i\ \(81\).jpg
+        ./imgs/info1/i\ \(82\).jpg
+        ./imgs/info1/i\ \(83\).jpg
+        ./imgs/info1/i\ \(84\).jpg
+        ./imgs/info1/i\ \(85\).jpg
+        ./imgs/info1/i\ \(86\).jpg
+        ./imgs/info1/i\ \(87\).jpg
+        ./imgs/info1/i\ \(88\).jpg
+        ./imgs/info1/i\ \(89\).jpg
+        ./imgs/info1/i\ \(90\).jpg
+        ./imgs/info1/i\ \(91\).jpg
+        ./imgs/info1/i\ \(92\).jpg
+        ./imgs/info1/i\ \(93\).jpg
+        ./imgs/info1/i\ \(94\).jpg
+        ./imgs/info1/i\ \(95\).jpg
+        ./imgs/info1/i\ \(96\).jpg
+        ./imgs/info1/i\ \(97\).jpg
+        ./imgs/info1/i\ \(98\).jpg
+        ./imgs/info1/i\ \(99\).jpg
+        ./imgs/info1/i\ \(100\).jpg
+        ./imgs/info1/i\ \(101\).jpg
+        ./imgs/info1/i\ \(102\).jpg
+        ./imgs/info1/i\ \(103\).jpg
+        ./imgs/info1/i\ \(104\).jpg
+        ./imgs/info1/i\ \(105\).jpg
+        ./imgs/info1/i\ \(106\).jpg
+        ./imgs/info1/i\ \(107\).jpg
+        ./imgs/info1/i\ \(108\).jpg
+        ./imgs/info1/i\ \(109\).jpg
+        ./imgs/info1/i\ \(110\).jpg
+        ./imgs/info1/i\ \(111\).jpg
+        ./imgs/info1/i\ \(112\).jpg
+        ./imgs/info1/i\ \(113\).jpg
+        ./imgs/info1/i\ \(114\).jpg
+        ./imgs/info1/i\ \(115\).jpg
+        ./imgs/info1/i\ \(116\).jpg
+        ./imgs/info1/i\ \(117\).jpg
+        ./imgs/info1/i\ \(118\).jpg
+        ./imgs/info1/i\ \(119\).jpg
+        ./imgs/info1/i\ \(120\).jpg
+        ./imgs/info1/i\ \(121\).jpg
+        ./imgs/info1/i\ \(122\).jpg
+        ./imgs/info1/i\ \(123\).jpg
+        ./imgs/info1/i\ \(124\).jpg
+        ./imgs/info1/i\ \(125\).jpg
+        ./imgs/info1/i\ \(126\).jpg
+        ./imgs/info1/i\ \(127\).jpg
+        ./imgs/info1/i\ \(128\).jpg
+        ./imgs/info1/i\ \(129\).jpg
+        ./imgs/info1/i\ \(130\).jpg
+        ./imgs/info1/i\ \(131\).jpg
+        ./imgs/info1/i\ \(132\).jpg
+        ./imgs/info1/i\ \(133\).jpg
+        ./imgs/info1/i\ \(134\).jpg
+        ./imgs/info1/i\ \(135\).jpg
+        ./imgs/info1/i\ \(136\).jpg
+        ./imgs/info1/i\ \(137\).jpg
+        ./imgs/info1/i\ \(138\).jpg
+        ./imgs/info1/i\ \(139\).jpg
+        ./imgs/info1/i\ \(140\).jpg
+        ./imgs/info1/i\ \(141\).jpg
+        ./imgs/info1/i\ \(142\).jpg
+        ./imgs/info1/i\ \(143\).jpg
+        ./imgs/info1/i\ \(144\).jpg
+        ./imgs/info1/i\ \(145\).jpg
+        ./imgs/info1/i\ \(146\).jpg
+        ./imgs/info1/i\ \(147\).jpg
+        ./imgs/info1/i\ \(148\).jpg
+        ./imgs/info1/i\ \(149\).jpg
+        ./imgs/info1/i\ \(150\).jpg
+        ./imgs/info1/i\ \(151\).jpg
+        ./imgs/info1/i\ \(152\).jpg
+        ./imgs/info1/i\ \(153\).jpg
+        ./imgs/info1/i\ \(154\).jpg
+        ./imgs/info1/i\ \(155\).jpg
+        ./imgs/info1/i\ \(156\).jpg
+        ./imgs/info1/i\ \(157\).jpg
+        ./imgs/info1/i\ \(158\).jpg
+        ./imgs/info1/i\ \(159\).jpg
+        ./imgs/info1/i\ \(160\).jpg
+        ./imgs/info1/i\ \(161\).jpg
+        ./imgs/info1/i\ \(162\).jpg
+        ./imgs/info1/i\ \(163\).jpg
+        ./imgs/info1/i\ \(164\).jpg
+        ./imgs/info1/i\ \(165\).jpg
+        ./imgs/info1/i\ \(166\).jpg
+        ./imgs/info1/i\ \(167\).jpg
+        ./imgs/info1/i\ \(168\).jpg
+        ./imgs/info1/i\ \(169\).jpg
+        ./imgs/info1/i\ \(170\).jpg
+        ./imgs/info1/i\ \(171\).jpg
+        ./imgs/info1/i\ \(172\).jpg
+        ./imgs/info1/i\ \(173\).jpg
+        ./imgs/info1/i\ \(174\).jpg
+        ./imgs/info1/i\ \(175\).jpg
+        ./imgs/info1/i\ \(176\).jpg
+        ./imgs/info1/i\ \(177\).jpg
+        ./imgs/info1/i\ \(178\).jpg
+        ./imgs/info1/i\ \(179\).jpg
+        ./imgs/info1/i\ \(180\).jpg
+        ./imgs/info1/i\ \(181\).jpg
+        ./imgs/info1/i\ \(182\).jpg
+        ./imgs/info1/i\ \(183\).jpg
+        ./imgs/info1/i\ \(184\).jpg
+        ./imgs/info1/i\ \(185\).jpg
+        ./imgs/info1/i\ \(186\).jpg
+        ./imgs/info1/i\ \(187\).jpg
+        ./imgs/info1/i\ \(188\).jpg
+        ./imgs/info1/i\ \(189\).jpg
+        ./imgs/info1/i\ \(190\).jpg
+        ./imgs/info1/i\ \(191\).jpg
+        ./imgs/info1/i\ \(192\).jpg
+        ./imgs/info1/i\ \(193\).jpg
+        ./imgs/info1/i\ \(194\).jpg
+        ./imgs/info1/i\ \(195\).jpg
+        ./imgs/info1/i\ \(196\).jpg
+        ./imgs/info1/i\ \(197\).jpg
+        ./imgs/info1/i\ \(198\).jpg
+        ./imgs/info1/i\ \(199\).jpg
+        ./imgs/info1/i\ \(200\).jpg
+        `;
+    return data.split("\n")[index];
+    }
+
+    const frameCount = 200;
+
+    const images = [];
+    const imageSeq = {
+    frame: 1,
+    };
+
+    for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = files(i);
+    images.push(img);
+    }
+
+    gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: `none`,
+    rotate: 100,
+    scrollTrigger: {
+        scrub: 0.15,
+        trigger: `.section6>canvas`,
+        start: `top 0%`,
+        end: `100% top`,
+        scroller: `.main`,    
+    },
+    onUpdate: render,
+    });
+
+    images[1].onload = render;
+
+    function render() {
+    scaleImage(images[imageSeq.frame], context);
+    }
+
+    function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+        img,
+        0,
+        0,
+        img.width,
+        img.height,
+        centerShift_x,
+        centerShift_y,
+        img.width * ratio,
+        img.height * ratio
+    );
+    }
+    ScrollTrigger.create({
+
+    trigger: "#section6>canvas",
+    pin: true,
+    // markers:true,
+    scroller: `.main`,
+    start: `top 0%`,
+    end: `100% top`,
+    });
+
+}
+
+canvasVideo();
+
+
+let services = [
+    { h5: "01", h3: "Cloud Provider", p: "Amazon AWS, <br> Microsoft Azure, GCP "},
+    { h5: "02", h3: "CI/CD", p: "Jenkins, GitLab, <br> GitHub, Git"},
+    { h5: "03", h3: "Infrastructure <br> provisioning", p: "Terraform, Pulumi, <br> AWS CloudFormation <br> and other"},
+    { h5: "04", h3: "Configuration <br> management", p: "Ansible, Chef, <br> Puppet"},
+    { h5: "05", h3: "Web Development", p: "Front-end, Back-end, <br> Full-stack Development"},
+    { h5: "06", h3: "Database", p: "Oracle, MySQL, Mango DB, <br> PostgresSQl, MS <br> SQL and other"},
+    { h5: "07", h3: "Business Process <br> Automation", p: "RPA and BPM"},
+    { h5: "08", h3: "Containers & <br> Orchestration", p: "Docker, K8s, wpar, <br> zone and other"},
+    { h5: "09", h3: "Big Data & <br> Data Analytics", p: "Data science, Wide <br> range of data analysis <br> services"},
+    { h5: "10", h3: "Services", p: "RabbitMQ, Apache <br> Kafka, Apache, Redis, <br> ELK stack and other"},
+    { h5: "11", h3: "Cloud Migration", p: "We will develop a migration strategy <br> without data loss and downtime for <br> your business"},
+    { h5: "12", h3: "Monitoring", p: "Prometheus, Datalog, Grafana, <br> Azure monitor, Amazon <br> CloudWatch, Zabbix and other"},
+ ];
+
+function servicesDetails() {
+    let clutter = "";
+
+    services.forEach(function (box, index) {
+        clutter += `<div class="box">
+                <div class="top">
+                    <h5>${box.h5}</h5>
+                    <h3>${box.h3}</h3>
+                </div>
+                <p>${box.p}</p>
+            </div>`
+    });
+
+    document.querySelector("#section8").innerHTML = clutter;
+
+}
+servicesDetails();
+
+gsap.from(".section8>.box",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section8>.box",
+        start: "top 80%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    rotateY: -180,
+    duration: 3,
+    stagger: .1,
+    ease: "elastic.out(1, 0.7)"
+})
+gsap.from(".section8>.box h5, .section8>.box h3, .section8>.box p",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section8>.box>.top>h5",
+        start: "top 80%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .5,
+    rotateY: -90,
+    duration: 3,
     ease: "elastic.out(1, 0.7)"
 })
 
