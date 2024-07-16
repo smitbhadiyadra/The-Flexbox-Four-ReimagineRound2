@@ -420,7 +420,7 @@ gsap.from(".section5>.box",{
     scrollTrigger: {
         scroller: ".main",
         trigger: ".section5>.box",
-        start: "top 80%",
+        start: "top 85%",
         end: "bottom bottom",
         // markers: true,
     },
@@ -874,25 +874,163 @@ gsap.from(".section8>.box",{
     },
 
     opacity: 0,
-    rotateY: -180,
+    rotateX: -180,
     duration: 3,
     stagger: .1,
     ease: "elastic.out(1, 0.7)"
 })
-gsap.from(".section8>.box h5, .section8>.box h3, .section8>.box p",{
+gsap.from(".section8>.box h5, .section8>.box h3",{
     scrollTrigger: {
         scroller: ".main",
         trigger: ".section8>.box>.top>h5",
+        start: "top 88%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .2,
+    rotateX: 100,
+    duration: 3,
+    ease: "elastic.out(1, 0.7)"
+})
+gsap.from(".section8>.box p",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section8>.box>p",
+        start: "top 85%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .2,
+    y: 50,
+    duration: 3,
+    ease: "elastic.out(1, 0.7)"
+})
+
+function section9TextAnime(){
+    Shery.textAnimate(".section9>.top>.left>h3", {
+        style: 1,
+        y: 1,
+        delay: 0.1,
+        duration: .2,
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        multiplier: 0.5,
+      });
+}
+
+gsap.from(".section9>.top>.left>h3",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section9>.top>.left>h3",
+        start: "top 75%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    onStart: ()=> section9TextAnime(),
+    // y: 50,
+    duration: 1.5,
+    ease: "elastic.out(1, 0.8)"
+})
+
+gsap.from(".section9>.top>.right>button",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section9>.top>.right>button",
+        start: "top 75%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .2,
+    y: 25,
+    scale: .5,
+    duration: 2,
+    ease: "elastic.out(1, 0.7)"
+})
+
+gsap.from(".section9>.bottom",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section9>.bottom",
         start: "top 80%",
         end: "bottom bottom",
         // markers: true,
     },
 
     opacity: 0,
-    delay: .5,
-    rotateY: -90,
-    duration: 3,
+    scale: .8,
+    duration: 2,
     ease: "elastic.out(1, 0.7)"
 })
 
+gsap.to(".section10",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section10",
+        start: "top 0%",
+        end: "+=100%",
+        // markers: true,
+        pin: true,
+        pinSpacing: false, 
+        scrub: 1
+    },
 
+    scale: 1.3,
+})
+
+gsap.to(".section11>.one",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section11>.one",
+        start: "top 0%",
+        end: "+=100%",
+        // markers: true,
+        pin: true,
+        pinSpacing: false, 
+        scrub: 1
+    },
+
+})
+
+gsap.to(".section11>.two",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section11>.two",
+        start: "top 0%",
+        end: "+=100%",
+        // markers: true,
+        pin: true,
+        pinSpacing: false, 
+    },
+
+})
+gsap.to(".section11>.three",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section11>.three",
+        start: "top 0%",
+        end: "+=100%",
+        // markers: true,
+        pin: true,
+        pinSpacing: false, 
+    },
+
+})
+gsap.to(".section11>.four",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section11>.four",
+        start: "top 0%",
+        end: "+=100%",
+        // markers: true,
+        pin: true,
+        pinSpacing: false, 
+    },
+
+})
