@@ -1095,7 +1095,7 @@ gsap.from(".section13>.top>.toBorder>.border",{
     delay: .1,
     width: "0%",
     duration: 2,
-    ease: "slow"
+    ease: "slow(0.7,0.7,false)"
 })
 
 
