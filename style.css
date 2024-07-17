@@ -66,7 +66,8 @@ body,html{
     width: 100vw;
     /* min-height: 100vh; */
     position: fixed;
-    font-family: HelvM;
+    font-family: HelvR;
+    font-weight: 300;
     position: relative;
     background-color: #EEF0F2;
 }
@@ -1573,12 +1574,168 @@ nav{
 
 .section12{
     width: 100%;
-    height: 100vh;
-    background-color: #3d847c;   
+    height: 120vh;
+    /* background-color: #3d847c;    */
+    background-color: #FFFFFF;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12vw;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 12vh 2vw;
+
+    .top{
+      width: 100%;
+      height: 30%;
+      /* background-color: #3ce37f78; */
+      h1{
+        font-size: 5.8vw;
+        font-family: HelvR;
+        font-weight: 300;
+        line-height: 1;
+        color: #101010;
+
+        span{
+          color: #B7B7B7;
+        }
+
+        .colorful{
+          color: transparent;
+          background: linear-gradient(to right, #89A6D2, #B2B1DB, #D6C3BE);
+          background-clip: text;
+          padding-bottom: 1.1vh;
+        }
+      }
+    }
+
+
+    .mid{
+      width: 100%;
+      height: 70%;
+      /* background-color: #e33cd278; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 4vh;
+
+      #line{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .8vw;
+      }
+
+      span{
+        font-size: 3vw;
+        font-family: HelvR;
+        font-weight: 300;
+        letter-spacing: -1px;
+        perspective: 100px;
+      }
+
+      input{
+        perspective: 100px;
+        height: 100%;
+        width: 24vw;
+        display: inline;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #858585;
+        font-family: HelvR;
+        font-size: 2.5vw;
+        font-weight: 300;
+        padding: 1vh 0 0 .5vw;
+        color: #101010;
+      }
+
+      input:focus, input:active{
+        outline: none;
+      }
+
+      input::placeholder{
+        color: #BABABA;
+      }
+
+      button{
+        margin-top: .5vh;
+        padding: 2vh 2.5vw;
+        border-radius: 50px;
+        border: 1px solid #BABABA;
+        background: transparent;
+        font-family: HelvM;
+        font-size: 1vw;
+        font-weight: 300;
+        cursor: pointer;
+        perspective: 100px;
+      }
+
+      .active{
+        border: 1px solid #101010;
+      }
+    
+      .button {
+        --color: #FFFFFF;
+        padding: .8em 1.4em;
+        background-color: #101010;
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        /* transition: .5s; */
+        font-weight: 400;
+        font-size: 17px;
+        border: 1px solid #101010;
+        font-family: inherit;
+        color: #101010;
+        z-index: 1;
+      }
+      button>a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #FFFFFF;
+        font-weight: 300;
+        font-size: 1vw;
+        gap: .5vw
+      }
+      
+      .button::before, .button::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+        background-color: var(--color);
+        transition: 1s ease;
+      }
+      
+      .button::before {
+        top: -1em;
+        left: -1em;
+      }
+      
+      .button::after {
+        left: calc(100% + 1em);
+        top: calc(100% + 1em);
+      }
+      
+      .button:hover::before, .button:hover::after {
+        height: 410px;
+        width: 410px;
+      }
+      
+      .button:hover a{
+        color: rgb(10, 25, 30);
+      }
+      
+      .button:active {
+        filter: brightness(.8);
+      }
+    }
 }
 
 
@@ -1587,27 +1744,117 @@ nav{
 
 .section13{
     width: 100%;
-    height: 100vh;
-    background-color: #3d4a84;   
+    height: 35vh;
+    /* background-color: #3d4a84;    */
+    background-color: #FFFFFF;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12vw;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 0 2vw;
+
+    .top{
+      width: 100%;
+      height: 60%;
+      /* background-color: red; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+
+      .toBorder{
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: #BABABA;
+        left: 0%;
+        top: 0%;
+
+        .border{
+          width: 40%;
+          height: 100%;
+          background-color: #b5a3f6e4;
+        }
+      }
+
+      .left{
+        width: 45%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img:nth-child(1){
+          width: 80px;
+        }
+        img:nth-child(2){
+          width: 85px;
+        }
+        img:nth-child(3){
+          width: 45px;
+        }
+        img:nth-child(4){
+          width: 65px;
+        }
+        img:nth-child(5){
+          width: 40px;
+        }
+        img:nth-child(6){
+          width: 80px;
+        }
+      }
+
+      .right{
+        width: 35%;
+        height: 100%;
+        /* background-color: palegreen; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3{
+          font-size: 1vw;
+          font-family: HelvM;
+          font-weight: 300;
+          padding: 0 3vw;
+        }
+
+        a{
+          text-decoration: none;
+          color: #101010;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          font-size: 1vw;
+          font-family: HelvM;
+          font-weight: 300;
+          i{
+            font-size: 1.5vw;
+          }
+        }
+      }
+    }
+
+    .bottom{
+      width: 100%;
+      height: 40%;
+      /* background-color: #3d845b; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1vh;
+
+      h3{
+        font-size: 1vw;
+        font-family: HelvM;
+        font-weight: 300;
+        color: #101010;
+      }
+    }
 }
 
 
 
-
-
-.section14{
-    width: 100%;
-    height: 100vh;
-    background-color: #843d57;   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12vw;
-}
 
 
 

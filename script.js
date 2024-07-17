@@ -964,7 +964,7 @@ gsap.from(".section9>.bottom",{
     },
 
     opacity: 0,
-    scale: .8,
+    scale: .5,
     duration: 2,
     ease: "elastic.out(1, 0.7)"
 })
@@ -1034,3 +1034,123 @@ gsap.to(".section11>.four",{
     },
 
 })
+
+
+const buttons = document.querySelectorAll(".line2>button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", function() {
+    buttons.forEach(btn => btn.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
+
+gsap.from(".section12>.top h1",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section12>.top h1",
+        start: "top 80%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .2,
+    y: 50,
+    duration: 3,
+    ease: "elastic.out(1, 0.7)"
+})
+
+
+gsap.from(".section12>.mid span, .section12>.mid input, .section12>.mid>.line2 button, .section12>.mid>.line5>button",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section12>.mid ",
+        start: "top 80%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .1,
+    rotateX: 100,
+    // y: 50,
+    stagger: .1,
+    duration: 2,
+    ease: "elastic.out(1, 0.7)"
+})
+
+
+gsap.from(".section13>.top>.toBorder>.border",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section13>.top>.toBorder>.border",
+        start: "top 70%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .1,
+    width: "0%",
+    duration: 2,
+    ease: "slow"
+})
+
+
+gsap.from(".section13>.top>.left img",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section13>.top>.toBorder>.border",
+        start: "top 70%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .1,
+    scale: .7,
+    x: -50,
+    stager: .3,
+    duration: 3,
+    ease: "elastic.out(1, 0.7)"
+})
+
+
+gsap.from(".section13>.top>.right h3, .section13>.top>.right a",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section13>.top>.toBorder>.border",
+        start: "top 70%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .1,
+    rotateX: 100,
+    stager: .3,
+    duration: 3,
+    ease: "elastic.out(1, 0.7)"
+})
+
+
+gsap.from(".section13>.bottom h3",{
+    scrollTrigger: {
+        scroller: ".main",
+        trigger: ".section13>.top>.toBorder>.border",
+        start: "top 70%",
+        end: "bottom bottom",
+        // markers: true,
+    },
+
+    opacity: 0,
+    delay: .1,
+    rotateX: 100,
+    y: 50,
+    stager: .3,
+    duration: 3,
+    ease: "elastic.out(1, 0.7)"
+})
+
