@@ -36,10 +36,189 @@ function locomotive(){
     ScrollTrigger.refresh();
 
 }
-
 locomotive();
 
 let width = window.innerWidth;
+
+function matter(){
+
+    const matterContainer = document.querySelector("#matter-container");
+    const THICCNESS = 60;
+
+// module aliases
+var Engine = Matter.Engine,
+  Render = Matter.Render,
+  Runner = Matter.Runner,
+  Bodies = Matter.Bodies,
+  Composite = Matter.Composite;
+
+// create an engine
+var engine = Engine.create();
+
+// create a renderer
+var render = Render.create({
+  element: matterContainer,
+  engine: engine,
+  options: {
+    width: matterContainer.clientWidth,
+    height: matterContainer.clientHeight,
+    background: "transparent",
+    wireframes: false,
+    showAngleIndicator: false
+  }
+});
+
+// create two boxes and a ground
+// var boxA = Bodies.rectangle(400, 200, 80, 80);
+// var boxB = Bodies.rectangle(450, 50, 80, 80);
+
+if(width>550){
+    for (let i = 0; i < 100; i++) {
+        let circle = Bodies.circle(i, 10, 30, {
+          friction: 0.3,
+          frictionAir: 0.00001,
+          restitution: 0.8
+        });
+        Composite.add(engine.world, circle);
+      }
+}
+if(width<550){
+    for (let i = 0; i < 100; i++) {
+        let circle = Bodies.circle(i, 10, 15, {
+          friction: 0.1,
+          frictionAir: 0.00001,
+          restitution: .9
+        });
+        Composite.add(engine.world, circle);
+      }
+}
+
+var ground = Bodies.rectangle(
+  matterContainer.clientWidth / 2,
+  matterContainer.clientHeight + THICCNESS / 2,
+  27184,
+  THICCNESS,
+  { isStatic: true }
+);
+
+let leftWall = Bodies.rectangle(
+  0 - THICCNESS / 2,
+  matterContainer.clientHeight / 2,
+  THICCNESS,
+  matterContainer.clientHeight * 5,
+  {
+    isStatic: true
+  }
+);
+
+let rightWall = Bodies.rectangle(
+  matterContainer.clientWidth + THICCNESS / 2,
+  matterContainer.clientHeight / 2,
+  THICCNESS,
+  matterContainer.clientHeight * 5,
+  { isStatic: true }
+);
+
+// add all of the bodies to the world
+Composite.add(engine.world, [ground, leftWall, rightWall]);
+
+let mouse = Matter.Mouse.create(render.canvas);
+let mouseConstraint = Matter.MouseConstraint.create(engine, {
+  mouse: mouse,
+  constraint: {
+    stiffness: 0.2,
+    render: {
+      visible: false
+    }
+  }
+});
+
+Composite.add(engine.world, mouseConstraint);
+
+
+// allow scroll through the canvas
+mouseConstraint.mouse.element.removeEventListener(
+  "mousewheel",
+  mouseConstraint.mouse.mousewheel
+);
+mouseConstraint.mouse.element.removeEventListener(
+  "DOMMouseScroll",
+  mouseConstraint.mouse.mousewheel
+);
+
+// run the renderer
+Render.run(render);
+
+// create runner
+var runner = Runner.create();
+
+// run the engine
+Runner.run(runner, engine);
+
+function handleResize(matterContainer) {
+  // set canvas size to new values
+  render.canvas.width = matterContainer.clientWidth;
+  render.canvas.height = matterContainer.clientHeight;
+
+  // reposition ground
+  Matter.Body.setPosition(
+    ground,
+    Matter.Vector.create(
+      matterContainer.clientWidth / 2,
+      matterContainer.clientHeight + THICCNESS / 2
+    )
+  );
+
+  // reposition right wall
+  Matter.Body.setPosition(
+    rightWall,
+    Matter.Vector.create(
+      matterContainer.clientWidth + THICCNESS / 2,
+      matterContainer.clientHeight / 2
+    )
+  );
+}
+
+window.addEventListener("resize", () => handleResize(matterContainer));
+}
+
+matter();
+
+gsap.from("#matter-container canvas",{
+    duration: 3,
+    delay: 1.5,
+    // rotateX: -100,
+    opacity: 0,
+    stagger: .2,
+    ease: "elastic.out(1, 0.7)",
+})
+gsap.from("#matter-container>p",{
+    duration: 3,
+    delay: 3,
+    rotateX: -100,
+    opacity: 0,
+    ease: "elastic.out(1, 0.7)",
+})
+gsap.from("#matter-container>#infosys>img, #matter-container>#infosys>button",{
+    duration: 3,
+    delay: 4,
+    rotateX: -100,
+    opacity: 0,
+    stagger: .7,
+    ease: "elastic.out(1, 0.7)",
+})
+
+
+function loading(){
+    gsap.to("#matter-container",{
+        duration: 1,
+        delay: .5,
+        y: "-100vh",
+        opacity: 0,
+        ease: "power3",
+        onCompelete: heroAnimation()
+    })
+}
 
 if(width>550){
     Shery.mouseFollower({
@@ -114,77 +293,79 @@ function menu(){
 
 let tl = gsap.timeline();
 
-tl.from("nav>.logo>img, nav>.right>.hamburger",{
-    opacity: 0,
-    duration: 2, 
-    // y: -50,
-    delay: .2,
-    stagger: .3,
-    scale: 0,
-    ease: "expo.out"
-},"hero")
-// .from("nav>.right a, nav>.right>button",{
-//     opacity: 0,
-//     duration: 2, 
-//     stagger: .2,
-//     // x: 50,
-//     y: -50,
-//     delay: .2,
-//     // scale: 2,
-//     ease: "elastic.out(1, 0.8)"
-// },"hero")
-.from(".hero>video",{
-    opacity: 0,
-    duration: 2, 
-    stagger: .2,
-    // x: 50,
-    y: -50,
-    scale: 1.5,
-    ease: "elastic.out(1, 0.6)",
-    delay: 1.2
-},"hero")
-.from(".hero>.left>.top",{
-    opacity: 0,
-    duration: 1, 
-    stagger: .2,
-    delay: .8,
-    // x: 50,
-    y: 50,
-},"hero")
-.from(".hero>.left>.bottom>h4",{
-    opacity: 0,
-    onStart: ()=> textAnime(),
-    duration: 1, 
-    delay: 1.4
-},"hero")
-.from(".hero>.left>.bottom>h1",{
-    opacity: 0,
-    duration: 2, 
-    stagger: .2,
-    rotateX: 100,
-    delay: 2,
-    scale: .9,
-    y: 15,
-    ease: "elastic.out(1, 0.6)"
-},"hero")
-.from(".hero>.left>.bottom>a",{
-    opacity: 0,
-    delay: 1,
-    duration: 1, 
-    // x: 50,
-    scale: 0.5,
-    ease: "elastic.out(1, 0.8)",
-    delay: 2.8
-},"hero")
-.from(".hero>.right>.text",{
-    opacity: 0,
-    duration: 2, 
-    // x: 50,
-    stagger: .3,
-    y: -50,
-    ease: "elastic.out(1, 0.8)",
-    delay: 2.8
-},"hero")
+function heroAnimation(){
+    tl.from("nav>.logo>img, nav>.right>.hamburger",{
+        opacity: 0,
+        duration: 2, 
+        // y: -50,
+        delay: .2,
+        stagger: .3,
+        scale: 0,
+        ease: "expo.out"
+    },"hero")
+    // .from("nav>.right a, nav>.right>button",{
+    //     opacity: 0,
+    //     duration: 2, 
+    //     stagger: .2,
+    //     // x: 50,
+    //     y: -50,
+    //     delay: .2,
+    //     // scale: 2,
+    //     ease: "elastic.out(1, 0.8)"
+    // },"hero")
+    .from(".hero>video",{
+        opacity: 0,
+        duration: 2, 
+        stagger: .2,
+        // x: 50,
+        y: -50,
+        scale: 1.5,
+        ease: "elastic.out(1, 0.6)",
+        delay: 1.2
+    },"hero")
+    .from(".hero>.left>.top",{
+        opacity: 0,
+        duration: 1, 
+        stagger: .2,
+        delay: .8,
+        // x: 50,
+        y: 50,
+    },"hero")
+    .from(".hero>.left>.bottom>h4",{
+        opacity: 0,
+        onStart: ()=> textAnime(),
+        duration: 1, 
+        delay: 1.4
+    },"hero")
+    .from(".hero>.left>.bottom>h1",{
+        opacity: 0,
+        duration: 2, 
+        stagger: .2,
+        rotateX: 100,
+        delay: 2,
+        scale: .9,
+        y: 15,
+        ease: "elastic.out(1, 0.6)"
+    },"hero")
+    .from(".hero>.left>.bottom>a",{
+        opacity: 0,
+        delay: 1,
+        duration: 1, 
+        // x: 50,
+        scale: 0.5,
+        ease: "elastic.out(1, 0.8)",
+        delay: 2.8
+    },"hero")
+    .from(".hero>.right>.text",{
+        opacity: 0,
+        duration: 2, 
+        // x: 50,
+        stagger: .3,
+        y: -50,
+        ease: "elastic.out(1, 0.8)",
+        delay: 2.8
+    },"hero")
+}
 
 
 

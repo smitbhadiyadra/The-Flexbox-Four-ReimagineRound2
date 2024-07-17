@@ -11,6 +11,11 @@ body,html{
     scroll-behavior: smooth;
 }
 
+html{
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
 @font-face {
     font-family: SequelB;
     src: url(fonts/Sequel\ Sans\ Bold\ Disp.ttf);
@@ -60,6 +65,112 @@ body,html{
     font-family: HelvXB;
     src: url(fonts/HelveticaNowDispXbd.ttf);
 }
+
+::selection{
+  color: #fff;
+  background: #000;
+}
+
+#matter-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: #050505;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    position: absolute;
+    color: #fff;
+    top: 2%;
+    left: 3%;
+    font-size: .7vw;
+    font-weight: 300;
+    font-family: HelvR;
+    text-transform: uppercase;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    opacity: .7;
+  }
+
+  p::after{
+    content: "";
+    width: 80%;
+    height: 1px;
+    position: absolute;
+    right: -85%;
+    top: 50%;
+    background-color: #fff;
+    opacity: .7;
+  }
+  
+#infosys{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vh;
+  z-index: 9999;
+
+  img{
+    width: 25%;
+  }
+  
+
+  /* h1{
+    font-size: 7vw;
+    color: transparent;
+    font-weight: 300;
+    font-family: HelvB;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(to right, #F19648, #F5D259, #ECECD1, #F55A3C, #063E7B);
+    background-clip: text;
+   } */
+
+
+  button{
+    cursor: pointer;
+    padding: 2vh 2vw;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-weight: 300;
+    font-family: HelvM;
+    font-size: 1vw;
+    letter-spacing: 2px;
+    transition: color .5s ease-in, letter-spacing .5s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+  }
+
+  i{
+    margin-top: .2vh;
+  }
+
+  button:hover{
+    background-color: #fff;
+    color: #000;
+    letter-spacing: 2px;
+  }
+
+  button:hover i{
+    margin-left: 5px;
+  }
+}
+
+
+}
+
+
 
 
 .main{
