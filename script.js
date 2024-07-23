@@ -194,17 +194,26 @@ gsap.from("#matter-container canvas",{
 })
 gsap.from("#matter-container>p",{
     duration: 3,
-    delay: 3,
+    delay: 2.5,
     rotateX: -100,
     opacity: 0,
     ease: "elastic.out(1, 0.7)",
 })
-gsap.from("#matter-container>#infosys>img, #matter-container>#infosys>button",{
-    duration: 3,
-    delay: 4,
-    rotateX: -100,
+gsap.from("#matter-container>#infosys>img",{
+    duration: 5,
+    delay: 3,
+    rotateX: -10,
     opacity: 0,
-    stagger: .7,
+    scale: .8,
+    stagger: .2,
+    ease: "elastic.out(1, 0.7)",
+})
+gsap.from("#matter-container>#infosys>button",{
+    duration: 5,
+    delay: 3,
+    rotateX: -10,
+    opacity: 0,
+    stagger: .2,
     ease: "elastic.out(1, 0.7)",
 })
 
