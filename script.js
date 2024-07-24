@@ -84,7 +84,7 @@ if(width>550){
 }
 if(width<550){
     for (let i = 0; i < 100; i++) {
-        let circle = Bodies.circle(i, 10, 15, {
+        let circle = Bodies.circle(i, 10, 17, {
           friction: 0.1,
           frictionAir: 0.00001,
           restitution: .9
@@ -218,6 +218,7 @@ gsap.from("#matter-container>#infosys>button",{
 })
 
 
+
 function loading(){
     gsap.to("#matter-container",{
         duration: 1,
@@ -264,7 +265,12 @@ function menu(){
 
 
     if(flag == true){
-        menu.style.right = "-150%";
+        if(width>700){
+            menu.style.right = "-150%";
+        }
+        if(width<700){
+            menu.style.right = "-30%";
+        }
         line.style.stroke = "#fff";
         line1.style.stroke = "#fff";
         flag = false;
@@ -747,7 +753,212 @@ function canvasVideo(){
     });
 
     function files(index) {
-    var data = `
+    if(width<830){
+        var data = `
+        ./imgs/infoMobile/i\ \(1\).jpg
+        ./imgs/infoMobile/i\ \(2\).jpg
+        ./imgs/infoMobile/i\ \(3\).jpg
+        ./imgs/infoMobile/i\ \(4\).jpg
+        ./imgs/infoMobile/i\ \(5\).jpg
+        ./imgs/infoMobile/i\ \(6\).jpg
+        ./imgs/infoMobile/i\ \(7\).jpg
+        ./imgs/infoMobile/i\ \(8\).jpg
+        ./imgs/infoMobile/i\ \(9\).jpg
+        ./imgs/infoMobile/i\ \(10\).jpg
+        ./imgs/infoMobile/i\ \(11\).jpg
+        ./imgs/infoMobile/i\ \(12\).jpg
+        ./imgs/infoMobile/i\ \(13\).jpg
+        ./imgs/infoMobile/i\ \(14\).jpg
+        ./imgs/infoMobile/i\ \(15\).jpg
+        ./imgs/infoMobile/i\ \(16\).jpg
+        ./imgs/infoMobile/i\ \(17\).jpg
+        ./imgs/infoMobile/i\ \(18\).jpg
+        ./imgs/infoMobile/i\ \(19\).jpg
+        ./imgs/infoMobile/i\ \(20\).jpg
+        ./imgs/infoMobile/i\ \(21\).jpg
+        ./imgs/infoMobile/i\ \(22\).jpg
+        ./imgs/infoMobile/i\ \(23\).jpg
+        ./imgs/infoMobile/i\ \(24\).jpg
+        ./imgs/infoMobile/i\ \(25\).jpg
+        ./imgs/infoMobile/i\ \(26\).jpg
+        ./imgs/infoMobile/i\ \(27\).jpg
+        ./imgs/infoMobile/i\ \(28\).jpg
+        ./imgs/infoMobile/i\ \(29\).jpg
+        ./imgs/infoMobile/i\ \(30\).jpg
+        ./imgs/infoMobile/i\ \(31\).jpg
+        ./imgs/infoMobile/i\ \(32\).jpg
+        ./imgs/infoMobile/i\ \(33\).jpg
+        ./imgs/infoMobile/i\ \(34\).jpg
+        ./imgs/infoMobile/i\ \(35\).jpg
+        ./imgs/infoMobile/i\ \(36\).jpg
+        ./imgs/infoMobile/i\ \(37\).jpg
+        ./imgs/infoMobile/i\ \(38\).jpg
+        ./imgs/infoMobile/i\ \(39\).jpg
+        ./imgs/infoMobile/i\ \(40\).jpg
+        ./imgs/infoMobile/i\ \(41\).jpg
+        ./imgs/infoMobile/i\ \(42\).jpg
+        ./imgs/infoMobile/i\ \(43\).jpg
+        ./imgs/infoMobile/i\ \(44\).jpg
+        ./imgs/infoMobile/i\ \(45\).jpg
+        ./imgs/infoMobile/i\ \(46\).jpg
+        ./imgs/infoMobile/i\ \(47\).jpg
+        ./imgs/infoMobile/i\ \(48\).jpg
+        ./imgs/infoMobile/i\ \(49\).jpg
+        ./imgs/infoMobile/i\ \(50\).jpg
+        ./imgs/infoMobile/i\ \(51\).jpg
+        ./imgs/infoMobile/i\ \(52\).jpg
+        ./imgs/infoMobile/i\ \(53\).jpg
+        ./imgs/infoMobile/i\ \(54\).jpg
+        ./imgs/infoMobile/i\ \(55\).jpg
+        ./imgs/infoMobile/i\ \(56\).jpg
+        ./imgs/infoMobile/i\ \(57\).jpg
+        ./imgs/infoMobile/i\ \(58\).jpg
+        ./imgs/infoMobile/i\ \(59\).jpg
+        ./imgs/infoMobile/i\ \(60\).jpg
+        ./imgs/infoMobile/i\ \(61\).jpg
+        ./imgs/infoMobile/i\ \(62\).jpg
+        ./imgs/infoMobile/i\ \(63\).jpg
+        ./imgs/infoMobile/i\ \(64\).jpg
+        ./imgs/infoMobile/i\ \(65\).jpg
+        ./imgs/infoMobile/i\ \(66\).jpg
+        ./imgs/infoMobile/i\ \(67\).jpg
+        ./imgs/infoMobile/i\ \(68\).jpg
+        ./imgs/infoMobile/i\ \(69\).jpg
+        ./imgs/infoMobile/i\ \(70\).jpg
+        ./imgs/infoMobile/i\ \(71\).jpg
+        ./imgs/infoMobile/i\ \(72\).jpg
+        ./imgs/infoMobile/i\ \(73\).jpg
+        ./imgs/infoMobile/i\ \(74\).jpg
+        ./imgs/infoMobile/i\ \(75\).jpg
+        ./imgs/infoMobile/i\ \(76\).jpg
+        ./imgs/infoMobile/i\ \(77\).jpg
+        ./imgs/infoMobile/i\ \(78\).jpg
+        ./imgs/infoMobile/i\ \(79\).jpg
+        ./imgs/infoMobile/i\ \(80\).jpg
+        ./imgs/infoMobile/i\ \(81\).jpg
+        ./imgs/infoMobile/i\ \(82\).jpg
+        ./imgs/infoMobile/i\ \(83\).jpg
+        ./imgs/infoMobile/i\ \(84\).jpg
+        ./imgs/infoMobile/i\ \(85\).jpg
+        ./imgs/infoMobile/i\ \(86\).jpg
+        ./imgs/infoMobile/i\ \(87\).jpg
+        ./imgs/infoMobile/i\ \(88\).jpg
+        ./imgs/infoMobile/i\ \(89\).jpg
+        ./imgs/infoMobile/i\ \(90\).jpg
+        ./imgs/infoMobile/i\ \(91\).jpg
+        ./imgs/infoMobile/i\ \(92\).jpg
+        ./imgs/infoMobile/i\ \(93\).jpg
+        ./imgs/infoMobile/i\ \(94\).jpg
+        ./imgs/infoMobile/i\ \(95\).jpg
+        ./imgs/infoMobile/i\ \(96\).jpg
+        ./imgs/infoMobile/i\ \(97\).jpg
+        ./imgs/infoMobile/i\ \(98\).jpg
+        ./imgs/infoMobile/i\ \(99\).jpg
+        ./imgs/infoMobile/i\ \(100\).jpg
+        ./imgs/infoMobile/i\ \(101\).jpg
+        ./imgs/infoMobile/i\ \(102\).jpg
+        ./imgs/infoMobile/i\ \(103\).jpg
+        ./imgs/infoMobile/i\ \(104\).jpg
+        ./imgs/infoMobile/i\ \(105\).jpg
+        ./imgs/infoMobile/i\ \(106\).jpg
+        ./imgs/infoMobile/i\ \(107\).jpg
+        ./imgs/infoMobile/i\ \(108\).jpg
+        ./imgs/infoMobile/i\ \(109\).jpg
+        ./imgs/infoMobile/i\ \(110\).jpg
+        ./imgs/infoMobile/i\ \(111\).jpg
+        ./imgs/infoMobile/i\ \(112\).jpg
+        ./imgs/infoMobile/i\ \(113\).jpg
+        ./imgs/infoMobile/i\ \(114\).jpg
+        ./imgs/infoMobile/i\ \(115\).jpg
+        ./imgs/infoMobile/i\ \(116\).jpg
+        ./imgs/infoMobile/i\ \(117\).jpg
+        ./imgs/infoMobile/i\ \(118\).jpg
+        ./imgs/infoMobile/i\ \(119\).jpg
+        ./imgs/infoMobile/i\ \(120\).jpg
+        ./imgs/infoMobile/i\ \(121\).jpg
+        ./imgs/infoMobile/i\ \(122\).jpg
+        ./imgs/infoMobile/i\ \(123\).jpg
+        ./imgs/infoMobile/i\ \(124\).jpg
+        ./imgs/infoMobile/i\ \(125\).jpg
+        ./imgs/infoMobile/i\ \(126\).jpg
+        ./imgs/infoMobile/i\ \(127\).jpg
+        ./imgs/infoMobile/i\ \(128\).jpg
+        ./imgs/infoMobile/i\ \(129\).jpg
+        ./imgs/infoMobile/i\ \(130\).jpg
+        ./imgs/infoMobile/i\ \(131\).jpg
+        ./imgs/infoMobile/i\ \(132\).jpg
+        ./imgs/infoMobile/i\ \(133\).jpg
+        ./imgs/infoMobile/i\ \(134\).jpg
+        ./imgs/infoMobile/i\ \(135\).jpg
+        ./imgs/infoMobile/i\ \(136\).jpg
+        ./imgs/infoMobile/i\ \(137\).jpg
+        ./imgs/infoMobile/i\ \(138\).jpg
+        ./imgs/infoMobile/i\ \(139\).jpg
+        ./imgs/infoMobile/i\ \(140\).jpg
+        ./imgs/infoMobile/i\ \(141\).jpg
+        ./imgs/infoMobile/i\ \(142\).jpg
+        ./imgs/infoMobile/i\ \(143\).jpg
+        ./imgs/infoMobile/i\ \(144\).jpg
+        ./imgs/infoMobile/i\ \(145\).jpg
+        ./imgs/infoMobile/i\ \(146\).jpg
+        ./imgs/infoMobile/i\ \(147\).jpg
+        ./imgs/infoMobile/i\ \(148\).jpg
+        ./imgs/infoMobile/i\ \(149\).jpg
+        ./imgs/infoMobile/i\ \(150\).jpg
+        ./imgs/infoMobile/i\ \(151\).jpg
+        ./imgs/infoMobile/i\ \(152\).jpg
+        ./imgs/infoMobile/i\ \(153\).jpg
+        ./imgs/infoMobile/i\ \(154\).jpg
+        ./imgs/infoMobile/i\ \(155\).jpg
+        ./imgs/infoMobile/i\ \(156\).jpg
+        ./imgs/infoMobile/i\ \(157\).jpg
+        ./imgs/infoMobile/i\ \(158\).jpg
+        ./imgs/infoMobile/i\ \(159\).jpg
+        ./imgs/infoMobile/i\ \(160\).jpg
+        ./imgs/infoMobile/i\ \(161\).jpg
+        ./imgs/infoMobile/i\ \(162\).jpg
+        ./imgs/infoMobile/i\ \(163\).jpg
+        ./imgs/infoMobile/i\ \(164\).jpg
+        ./imgs/infoMobile/i\ \(165\).jpg
+        ./imgs/infoMobile/i\ \(166\).jpg
+        ./imgs/infoMobile/i\ \(167\).jpg
+        ./imgs/infoMobile/i\ \(168\).jpg
+        ./imgs/infoMobile/i\ \(169\).jpg
+        ./imgs/infoMobile/i\ \(170\).jpg
+        ./imgs/infoMobile/i\ \(171\).jpg
+        ./imgs/infoMobile/i\ \(172\).jpg
+        ./imgs/infoMobile/i\ \(173\).jpg
+        ./imgs/infoMobile/i\ \(174\).jpg
+        ./imgs/infoMobile/i\ \(175\).jpg
+        ./imgs/infoMobile/i\ \(176\).jpg
+        ./imgs/infoMobile/i\ \(177\).jpg
+        ./imgs/infoMobile/i\ \(178\).jpg
+        ./imgs/infoMobile/i\ \(179\).jpg
+        ./imgs/infoMobile/i\ \(180\).jpg
+        ./imgs/infoMobile/i\ \(181\).jpg
+        ./imgs/infoMobile/i\ \(182\).jpg
+        ./imgs/infoMobile/i\ \(183\).jpg
+        ./imgs/infoMobile/i\ \(184\).jpg
+        ./imgs/infoMobile/i\ \(185\).jpg
+        ./imgs/infoMobile/i\ \(186\).jpg
+        ./imgs/infoMobile/i\ \(187\).jpg
+        ./imgs/infoMobile/i\ \(188\).jpg
+        ./imgs/infoMobile/i\ \(189\).jpg
+        ./imgs/infoMobile/i\ \(190\).jpg
+        ./imgs/infoMobile/i\ \(191\).jpg
+        ./imgs/infoMobile/i\ \(192\).jpg
+        ./imgs/infoMobile/i\ \(193\).jpg
+        ./imgs/infoMobile/i\ \(194\).jpg
+        ./imgs/infoMobile/i\ \(195\).jpg
+        ./imgs/infoMobile/i\ \(196\).jpg
+        ./imgs/infoMobile/i\ \(197\).jpg
+        ./imgs/infoMobile/i\ \(198\).jpg
+        ./imgs/infoMobile/i\ \(199\).jpg
+        ./imgs/infoMobile/i\ \(200\).jpg
+        `;
+    }
+    if(width>830){
+        var data = `
         ./imgs/info1/i\ \(1\).jpg
         ./imgs/info1/i\ \(2\).jpg
         ./imgs/info1/i\ \(3\).jpg
@@ -949,21 +1160,26 @@ function canvasVideo(){
         ./imgs/info1/i\ \(199\).jpg
         ./imgs/info1/i\ \(200\).jpg
         `;
+    }
     return data.split("\n")[index];
     }
 
-    const frameCount = 200;
+        const frameCount = 200;
+    
+        const images = [];
 
-    const images = [];
-    const imageSeq = {
-    frame: 1,
-    };
+        let imageSeq = {
+        frame: 1,
+        };
+        for (let i = 0; i < frameCount; i++) {
+            const img = new Image();
+            img.src = files(i);
+            images.push(img);
+            }
+       
 
-    for (let i = 0; i < frameCount; i++) {
-    const img = new Image();
-    img.src = files(i);
-    images.push(img);
-    }
+
+
 
     gsap.to(imageSeq, {
     frame: frameCount - 1,
@@ -1179,7 +1395,7 @@ gsap.to(".section11>.one",{
         scroller: ".main",
         trigger: ".section11>.one",
         start: "top 0%",
-        end: "+=100%",
+        end: "+=400%",
         // markers: true,
         pin: true,
         pinSpacing: false, 
@@ -1193,7 +1409,7 @@ gsap.to(".section11>.two",{
         scroller: ".main",
         trigger: ".section11>.two",
         start: "top 0%",
-        end: "+=100%",
+        end: "+=300%",
         // markers: true,
         pin: true,
         pinSpacing: false, 
@@ -1205,7 +1421,7 @@ gsap.to(".section11>.three",{
         scroller: ".main",
         trigger: ".section11>.three",
         start: "top 0%",
-        end: "+=100%",
+        end: "+=200%",
         // markers: true,
         pin: true,
         pinSpacing: false, 

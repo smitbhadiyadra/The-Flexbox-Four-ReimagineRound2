@@ -213,7 +213,7 @@ nav{
 
         .hamburger {
             cursor: pointer;
-            z-index: 999;
+            z-index: 1999;
           }
           
           .hamburger input {
@@ -257,10 +257,10 @@ nav{
             position: absolute;
             width: 60vw;
             height: 115vh;
-            z-index: 9;
+            z-index: 1019;
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(10px);
-            background-color: #101010e8;
+            background-color: #101010f0;
             right: -3500%;
             top: -150%;
             padding: 0vh 5vw;
@@ -578,7 +578,9 @@ nav{
         justify-content: space-around;
         align-items: end;
         padding: 5vh 0;
-
+        #bg-phone{
+          display: none;
+        }
         .text{
             font-size: 1.1vw;
             z-index: 99;
@@ -1450,7 +1452,7 @@ nav{
         height: 100%;
         width: fit-content;
         white-space: nowrap;
-        animation: scrollTextToRight 150s infinite linear;
+        animation: scrollTextToRight 150s infinite linear alternate;
         font-size: 2.6vw;
         color: #FFFFFF;
         display: flex;
@@ -1486,10 +1488,10 @@ nav{
 
 @keyframes scrollTextToRight {
   from {
-    transform: translateX(-80%);
+    transform: translateX(0%);
   }
   to {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 }
 
