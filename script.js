@@ -200,7 +200,10 @@ function rippleEffect(){
         perturbance: .04
       });
 }
-rippleEffect();
+
+if(width>1200){
+    rippleEffect();
+}
 
 gsap.from("#matter-container canvas",{
     duration: 3,
