@@ -181,8 +181,26 @@ function handleResize(matterContainer) {
 
 window.addEventListener("resize", () => handleResize(matterContainer));
 }
-
 matter();
+
+function rippleEffect(){
+    $('#home').ripples({
+        resolution: 512,
+        dropRadius: 20,
+        perturbance: 0.04
+      });
+    $('#menu').ripples({
+        resolution: 512,
+        dropRadius: 20,
+        perturbance: .04
+      });
+    $('#matter-container').ripples({
+        resolution: 512,
+        dropRadius: 20,
+        perturbance: .04
+      });
+}
+rippleEffect();
 
 gsap.from("#matter-container canvas",{
     duration: 3,
@@ -607,8 +625,8 @@ gsap.from(".section4>.box>h2",{
 
 function counter(){
     $(".counter").counterUp({
-        delay: 4,
-        time: 1000,
+        delay: 5,
+        time: 300,
     });
 }
 
